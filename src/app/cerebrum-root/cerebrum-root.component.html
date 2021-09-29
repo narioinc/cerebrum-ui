@@ -1,0 +1,24 @@
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav [@onSideNavChange]="sideNavState ? 'open' : 'close'" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')"
+  mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item (click)="onSidenavToggle()">
+        <mat-icon class="cerebrum-app-icon" mat-list-icon >home</mat-icon>
+        <h4 class="cerebrum-app-title" matLine [@animateText]="linkText ? 'show' : 'hide'">TestApp</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-list-item (click)="navigate(cerebrumApp)" *ngFor="let cerebrumApp of cerebrumApps">
+        <mat-icon class="cerebrum-app-icon" mat-list-icon>{{cerebrumApp.appIcon}}</mat-icon>
+        <h4 class="cerebrum-app-title" matLine [@animateText]="linkText ? 'show' : 'hide'">{{cerebrumApp.appTitle}}</h4>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
+    <iframe class="cerebrum-container" referrer="no-referrer" sandbox="allow-scripts allow-popups allow-same-origin"
+      [src]="urlSafe" title="cerebrum app container"></iframe>
+  </mat-sidenav-content>
+</mat-sidenav-container>
