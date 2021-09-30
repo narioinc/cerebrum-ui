@@ -18,7 +18,6 @@
   </mat-sidenav>
 
   <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
-    <iframe class="cerebrum-container" referrer="no-referrer" sandbox="allow-scripts allow-popups allow-same-origin"
-      [src]="urlSafe" title="cerebrum app container"></iframe>
+    <iframe frameBorder="0" class="cerebrum-container" referrer="no-referrer" [src]="urlSafe" title="cerebrum app container"></iframe>
   </mat-sidenav-content>
 </mat-sidenav-container>

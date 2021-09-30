@@ -18,32 +18,32 @@ export class CerebrumRootComponent implements OnInit {
       "appId": 0,
       "appIcon": "apps",
       "appTitle": "App Manager",
-      "appurl": "http://aa0f9814f143a443297e9f931e3a9922-462708366.us-east-1.elb.amazonaws.com/dashboard/login/sso?continue=/"
+      "appurl": "http://helloworld2.info"
     },
     {
       "appId": 1,
       "appIcon": "assignment",
       "appTitle": "App Logging",
-      "appurl": "https://elastic.devlabs-tools.net/app/home#/"
+      "appurl": "http://localhost:8083/"
     },
 
     {
       "appId": 2,
       "appIcon": "assessment",
       "appTitle": "App Metrics",
-      "appurl": "https://grafana.devlabs-tools.net/login",
+      "appurl": "http://localhost:7073/",
     },
     {
       "appId": 3,
       "appIcon": "share",
       "appTitle": "API Tracing",
-      "appurl": "https://jaeger.devlabs-tools.net/search",
+      "appurl": "https://jaeger.devlabs-tools.net/",
     },
     {
       "appId": 4,
       "appIcon": "bug_report",
       "appTitle": "App Inspect",
-      "appurl": "https://jaeger.devlabs-tools.net/search",
+      "appurl": "http://helloworld.info/glitch/",
     },
     {
       "appId": 5,
@@ -71,10 +71,13 @@ export class CerebrumRootComponent implements OnInit {
   }
 
   navigate(cerebrumApp: any): void {
-    if (cerebrumApp) {
+    //if (cerebrumApp && cerebrumApp.appId!=0) {
       console.log("navigating..." + cerebrumApp.appurl)
       this.urlSafe = this.domSanitizer.bypassSecurityTrustResourceUrl(cerebrumApp.appurl);
-    }
+    //}else if(cerebrumApp.appId==0){
+    //  window.open("http://aa0f9814f143a443297e9f931e3a9922-462708366.us-east-1.elb.amazonaws.com/dashboard/login/sso?continue=/","_self")
+    //}
+
   }
 
   onSidenavToggle() {
