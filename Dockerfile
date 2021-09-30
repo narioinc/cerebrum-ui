@@ -13,8 +13,8 @@ COPY ./ /usr/local/app/
 RUN npm install
 
 # Generate the build of the application
-RUN npm run build -- --baseHref=/cerebrum/
-
+#RUN npm run build -- --baseHref=/cerebrum/
+RUN npm run build 
 
 # Stage 2: Serve app with nginx server
 
