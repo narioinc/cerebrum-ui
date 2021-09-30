@@ -9,9 +9,11 @@
       <mat-divider></mat-divider>
     </mat-nav-list>
     <mat-nav-list>
+     
       <mat-list-item (click)="navigate(cerebrumApp)" *ngFor="let cerebrumApp of cerebrumApps">
         <mat-icon class="cerebrum-app-icon" mat-list-icon>{{cerebrumApp.appIcon}}</mat-icon>
         <h4 class="cerebrum-app-title" matLine [@animateText]="linkText ? 'show' : 'hide'">{{cerebrumApp.appTitle}}</h4>
+        <mat-divider *ngIf="cerebrumApp.appId == 5;"></mat-divider>
       </mat-list-item>
 
     </mat-nav-list>

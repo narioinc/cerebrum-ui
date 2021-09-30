@@ -16,22 +16,25 @@ export class CerebrumRootComponent implements OnInit {
   cerebrumApps: any = [
     {
       "appId": 0,
-      "appIcon": "apps",
+      "appIcon": "dashboard",
       "appTitle": "App Manager",
-      "appurl": "http://helloworld2.info"
+      "appurl": "https://helloworld6.info"
+      //"appurl": "https://helloworld2.info/"
     },
     {
       "appId": 1,
       "appIcon": "assignment",
       "appTitle": "App Logging",
-      "appurl": "http://localhost:8083/"
+      "appurl": "https://elastic.devlabs-tools.net/app/home#/"
+      //"appurl": "https://helloworld5.info"
     },
 
     {
       "appId": 2,
       "appIcon": "assessment",
       "appTitle": "App Metrics",
-      "appurl": "http://localhost:7073/",
+      "appurl": "https://grafana.devlabs-tools.net/login"
+      //"appurl": "http://helloworld4.info",
     },
     {
       "appId": 3,
@@ -43,14 +46,20 @@ export class CerebrumRootComponent implements OnInit {
       "appId": 4,
       "appIcon": "bug_report",
       "appTitle": "App Inspect",
-      "appurl": "http://helloworld.info/glitch/",
+      "appurl": "https://helloworld3.info",
     },
     {
       "appId": 5,
       "appIcon": "folder_shared",
       "appTitle": "Storage",
       "appurl": "https://prometheus.devlabs-tools.net/",
-    },]
+    },
+    {
+      "appId": 6,
+      "appIcon": "apps",
+      "appTitle": "Sample app",
+      "appurl": "https://hotrod.devlabs-tools.net/",
+    }]
   opened: boolean = true;
   sideNavMode: any = "push";
   public onSideNavChange: boolean = true;
