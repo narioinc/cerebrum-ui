@@ -26,8 +26,8 @@ export class CerebrumRootComponent implements OnInit {
       "appId": 1,
       "appIcon": "assignment",
       "appTitle": "App Logging",
-      //"appurl": "https://elastic.devlabs-tools.net/app/home#/",
-      "appurl": "https://helloworld5.info",
+      "appurl": "https://elastic.devlabs-tools.net/app/home#/",
+      //"appurl": "https://helloworld5.info",
       "enabled": true
     },
 
@@ -58,7 +58,8 @@ export class CerebrumRootComponent implements OnInit {
       "appId": 5,
       "appIcon": "account_tree",
       "appTitle": "Container Manager",
-      "appurl": "https://portainer.192.168.49.2.nip.io",
+      //"appurl": "https://portainer.192.168.49.2.nip.io",
+      "appurl": "http://portainer.devlabs-tools.net:9000",
       "enabled": true
     },
     {
