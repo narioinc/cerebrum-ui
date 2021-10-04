@@ -18,7 +18,7 @@ export class CerebrumRootComponent implements OnInit {
       "appId": 0,
       "appIcon": "dashboard",
       "appTitle": "App Manager",
-      "appurl": "http://devtron.devlabs-tools.net/",
+      "appurl": "https://devtron.devlabs-tools.net/",
       //"appurl": "https://helloworld6.info/"
       "enabled": true
     },
@@ -73,7 +73,7 @@ export class CerebrumRootComponent implements OnInit {
       "appId": 7,
       "appIcon": "account_circle",
       "appTitle": "Accounts",
-      "appurl": "https://prometheus.devlabs-tools.net/",
+      "appurl": "http://localhost:9092",
       "enabled": true
     },
     {
@@ -108,7 +108,7 @@ export class CerebrumRootComponent implements OnInit {
       console.log("navigating..." + cerebrumApp.appurl)
       this.urlSafe = this.domSanitizer.bypassSecurityTrustResourceUrl(cerebrumApp.appurl);
     }else if(cerebrumApp.appId==0){
-      window.open("http://devtron.devlabs-tools.net","_self")
+      window.open("https://devtron.devlabs-tools.net","_blank")   //or use _self for same tab
     }
 
   }
