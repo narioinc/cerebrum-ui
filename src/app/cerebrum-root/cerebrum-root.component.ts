@@ -88,6 +88,7 @@ export class CerebrumRootComponent implements OnInit {
   sideNavMode: any = "push";
   public onSideNavChange: boolean = true;
   public sideNavState: boolean = false;
+  showLoading = false;
   containerUrl: any = this.cerebrumApps[0];
   urlSafe: SafeResourceUrl;
   constructor(private domSanitizer: DomSanitizer, private _sidenavService: SideNavService) { 
@@ -98,6 +99,7 @@ export class CerebrumRootComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.showLoading = true;
     this.urlSafe = this.domSanitizer.bypassSecurityTrustResourceUrl("https://hotrod.devlabs-tools.net/");
     //this.containerUrl = this.domSanitizer.bypassSecurityTrustResourceUrl('https://elastic.devlabs-tools.net/app/home#/');
     //this.urlSafe = this.domSanitizer.bypassSecurityTrustResourceUrl(this.cerebrumApps[0]);
@@ -106,11 +108,16 @@ export class CerebrumRootComponent implements OnInit {
   navigate(cerebrumApp: any): void {
     if (cerebrumApp && cerebrumApp.appId!=0) {
       console.log("navigating..." + cerebrumApp.appurl)
+      this.showLoading = true;
       this.urlSafe = this.domSanitizer.bypassSecurityTrustResourceUrl(cerebrumApp.appurl);
     }else if(cerebrumApp.appId==0){
       window.open("https://devtron.devlabs-tools.net","_blank")   //or use _self for same tab
     }
 
+  }
+
+  onLoad() {
+    this.showLoading = false;
   }
 
   onSidenavToggle() {

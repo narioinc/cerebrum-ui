@@ -21,6 +21,10 @@
   </mat-sidenav>
 
   <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
-    <iframe frameBorder="0" class="cerebrum-container" referrer="no-referrer" [src]="urlSafe" title="cerebrum app container"></iframe>
+    <div class="mask" *ngIf="showLoading">
+      <i class="pei pei-spinner"></i>
+    </div>
+    <iframe seamless frameBorder="0" class="cerebrum-container" referrer="no-referrer" (load)="onLoad()" [src]="urlSafe" title="cerebrum app container"></iframe>
+  
   </mat-sidenav-content>
 </mat-sidenav-container>
