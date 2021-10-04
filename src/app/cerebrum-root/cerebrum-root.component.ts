@@ -18,48 +18,71 @@ export class CerebrumRootComponent implements OnInit {
       "appId": 0,
       "appIcon": "dashboard",
       "appTitle": "App Manager",
-      "appurl": "https://helloworld6.info"
-      //"appurl": "https://helloworld2.info/"
+      "appurl": "http://devtron.devlabs-tools.net/",
+      //"appurl": "https://helloworld6.info/"
+      "enabled": true
     },
     {
       "appId": 1,
       "appIcon": "assignment",
       "appTitle": "App Logging",
-      "appurl": "https://elastic.devlabs-tools.net/app/home#/"
-      //"appurl": "https://helloworld5.info"
+      //"appurl": "https://elastic.devlabs-tools.net/app/home#/",
+      "appurl": "https://helloworld5.info",
+      "enabled": true
     },
 
     {
       "appId": 2,
       "appIcon": "assessment",
       "appTitle": "App Metrics",
-      "appurl": "https://grafana.devlabs-tools.net/login"
+      "appurl": "https://grafana.devlabs-tools.net/login",
       //"appurl": "http://helloworld4.info",
+      "enabled": true
     },
     {
       "appId": 3,
       "appIcon": "share",
       "appTitle": "API Tracing",
       "appurl": "https://jaeger.devlabs-tools.net/",
+      "enabled": true
     },
     {
       "appId": 4,
       "appIcon": "bug_report",
       "appTitle": "App Inspect",
       "appurl": "https://helloworld3.info",
+      //"appurl":"https://glitch.devlabs-tools.net",
+      "enabled": true
     },
     {
       "appId": 5,
-      "appIcon": "folder_shared",
-      "appTitle": "Storage",
-      "appurl": "https://prometheus.devlabs-tools.net/",
+      "appIcon": "account_tree",
+      "appTitle": "Container Manager",
+      "appurl": "https://portainer.192.168.49.2.nip.io",
+      "enabled": true
     },
     {
       "appId": 6,
+      "appIcon": "folder_shared",
+      "appTitle": "Storage",
+      "appurl": "https://prometheus.devlabs-tools.net/",
+      "enabled": true
+    },
+    {
+      "appId": 7,
+      "appIcon": "account_circle",
+      "appTitle": "Accounts",
+      "appurl": "https://prometheus.devlabs-tools.net/",
+      "enabled": true
+    },
+    {
+      "appId": 8,
       "appIcon": "apps",
       "appTitle": "Sample app",
       "appurl": "https://hotrod.devlabs-tools.net/",
-    }]
+      "enabled": true
+    }
+  ]
   opened: boolean = true;
   sideNavMode: any = "push";
   public onSideNavChange: boolean = true;
@@ -80,12 +103,12 @@ export class CerebrumRootComponent implements OnInit {
   }
 
   navigate(cerebrumApp: any): void {
-    //if (cerebrumApp && cerebrumApp.appId!=0) {
+    if (cerebrumApp && cerebrumApp.appId!=0) {
       console.log("navigating..." + cerebrumApp.appurl)
       this.urlSafe = this.domSanitizer.bypassSecurityTrustResourceUrl(cerebrumApp.appurl);
-    //}else if(cerebrumApp.appId==0){
-    //  window.open("http://aa0f9814f143a443297e9f931e3a9922-462708366.us-east-1.elb.amazonaws.com/dashboard/login/sso?continue=/","_self")
-    //}
+    }else if(cerebrumApp.appId==0){
+      window.open("http://devtron.devlabs-tools.net","_self")
+    }
 
   }
 
