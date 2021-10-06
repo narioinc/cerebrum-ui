@@ -59,7 +59,7 @@ export class CerebrumRootComponent implements OnInit {
       "appIcon": "account_tree",
       "appTitle": "Container Manager",
       //"appurl": "https://portainer.192.168.49.2.nip.io",
-      "appurl": "http://portainer.devlabs-tools.net:9000",
+      "appurl": "https://portainer.devlabs-tools.net",
       "enabled": true
     },
     {
