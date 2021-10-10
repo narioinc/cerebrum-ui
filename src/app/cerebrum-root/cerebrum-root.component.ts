@@ -18,16 +18,14 @@ export class CerebrumRootComponent implements OnInit {
       "appId": 0,
       "appIcon": "dashboard",
       "appTitle": "App Manager",
-      "appurl": "https://devtron.devlabs-tools.net/",
-      //"appurl": "https://helloworld6.info/"
+      "appurl": "https://devtron.192.168.49.2.nip.io",
       "enabled": true
     },
     {
       "appId": 1,
       "appIcon": "assignment",
       "appTitle": "App Logging",
-      "appurl": "https://elastic.devlabs-tools.net/app/home#/",
-      //"appurl": "https://helloworld5.info",
+      "appurl": "https://kibana.192.168.49.2.nip.io",
       "enabled": true
     },
 
@@ -35,45 +33,42 @@ export class CerebrumRootComponent implements OnInit {
       "appId": 2,
       "appIcon": "assessment",
       "appTitle": "App Metrics",
-      "appurl": "https://grafana.devlabs-tools.net/login",
-      //"appurl": "http://helloworld4.info",
+      "appurl": "https://grafana.192.168.49.2.nip.io",
       "enabled": true
     },
     {
       "appId": 3,
       "appIcon": "share",
       "appTitle": "API Tracing",
-      "appurl": "https://jaeger.devlabs-tools.net/",
+      "appurl": "https://prometheus.192.168.49.2.nip.io",
       "enabled": true
     },
     {
       "appId": 4,
       "appIcon": "bug_report",
       "appTitle": "App Inspect",
-      "appurl": "https://helloworld3.info",
-      //"appurl":"https://glitch.devlabs-tools.net",
+      "appurl": "https://glitchtip.192.168.49.2.nip.io",
       "enabled": true
     },
     {
       "appId": 5,
       "appIcon": "account_tree",
       "appTitle": "Container Manager",
-      //"appurl": "https://portainer.192.168.49.2.nip.io",
-      "appurl": "https://portainer.devlabs-tools.net",
+      "appurl": "https://portainer.192.168.49.2.nip.io",
       "enabled": true
     },
     {
       "appId": 6,
       "appIcon": "folder_shared",
       "appTitle": "Storage",
-      "appurl": "https://prometheus.devlabs-tools.net/",
+      "appurl": "https://prometheus.192.168.49.2.nip.io",
       "enabled": true
     },
     {
       "appId": 7,
       "appIcon": "account_circle",
       "appTitle": "Accounts",
-      "appurl": "http://localhost:9092",
+      "appurl": "http://keycloak.192.168.49.2.nip.io",
       "enabled": true
     },
     {
@@ -117,6 +112,7 @@ export class CerebrumRootComponent implements OnInit {
   }
 
   onLoad() {
+    console.log("loladed")
     this.showLoading = false;
   }
 
