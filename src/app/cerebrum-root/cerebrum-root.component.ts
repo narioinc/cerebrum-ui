@@ -15,48 +15,48 @@ export class CerebrumRootComponent implements OnInit {
   linkText: boolean = false;
   cerebrumApps: any = [
     {
-      "appId": 0,
+      "appId": 1,
       "appIcon": "dashboard",
-      "appTitle": "App Manager",
-      "appurl": "https://devtron.192.168.49.2.nip.io",
+      "appTitle": "App Mesh",
+      "appurl": "http://kiali.example.com:8080",
       "enabled": true
     },
     {
-      "appId": 1,
+      "appId": 2,
       "appIcon": "assignment",
       "appTitle": "App Logging",
-      "appurl": "https://kibana.192.168.49.2.nip.io",
+      "appurl": "http://grafana.example.com:8080/explore?orgId=1&left=%7B%22datasource%22:%22Loki%22,%22queries%22:%5B%7B%22refId%22:%22A%22,%22expr%22:%22%22,%22queryType%22:%22range%22%7D%5D,%22range%22:%7B%22from%22:%22now-1h%22,%22to%22:%22now%22%7D%7D",
       "enabled": true
     },
 
     {
-      "appId": 2,
+      "appId": 3,
       "appIcon": "assessment",
       "appTitle": "App Metrics",
-      "appurl": "https://grafana.192.168.49.2.nip.io",
-      "enabled": true
-    },
-    {
-      "appId": 3,
-      "appIcon": "share",
-      "appTitle": "API Tracing",
-      "appurl": "https://prometheus.192.168.49.2.nip.io",
+      "appurl": "http://grafana.example.com:8080/d/3--MLVZZk/istio-control-plane-dashboard?orgId=1&refresh=5s&from=1669865739763&to=1669866039763",
       "enabled": true
     },
     {
       "appId": 4,
-      "appIcon": "bug_report",
-      "appTitle": "App Inspect",
-      "appurl": "https://glitchtip.192.168.49.2.nip.io",
+      "appIcon": "share",
+      "appTitle": "API Tracing",
+      "appurl": "http://tracing.example.com:8080",
       "enabled": true
     },
     {
       "appId": 5,
-      "appIcon": "account_tree",
-      "appTitle": "Container Manager",
-      "appurl": "https://portainer.192.168.49.2.nip.io",
+      "appIcon": "bug_report",
+      "appTitle": "App Inspect",
+      "appurl": "https://glitchtip.example.com:8080",
       "enabled": true
     },
+    {
+      "appId": 6,
+      "appIcon": "account_tree",
+      "appTitle": "Container Manager",
+      "appurl": "http://dashboard.example.com:8080",
+      "enabled": true
+    }/*,
     {
       "appId": 6,
       "appIcon": "folder_shared",
@@ -70,14 +70,14 @@ export class CerebrumRootComponent implements OnInit {
       "appTitle": "Accounts",
       "appurl": "http://keycloak.192.168.49.2.nip.io",
       "enabled": true
-    },
+    }/*,
     {
       "appId": 8,
       "appIcon": "apps",
       "appTitle": "Sample app",
       "appurl": "https://hotrod.devlabs-tools.net/",
       "enabled": true
-    }
+    }*/
   ]
   opened: boolean = true;
   sideNavMode: any = "push";
@@ -95,7 +95,7 @@ export class CerebrumRootComponent implements OnInit {
 
   ngOnInit(): void {
     this.showLoading = true;
-    this.urlSafe = this.domSanitizer.bypassSecurityTrustResourceUrl("https://hotrod.devlabs-tools.net/");
+    this.urlSafe = this.domSanitizer.bypassSecurityTrustResourceUrl("http://dashboard.example.com:8080");
     //this.containerUrl = this.domSanitizer.bypassSecurityTrustResourceUrl('https://elastic.devlabs-tools.net/app/home#/');
     //this.urlSafe = this.domSanitizer.bypassSecurityTrustResourceUrl(this.cerebrumApps[0]);
   }
@@ -106,7 +106,7 @@ export class CerebrumRootComponent implements OnInit {
       this.showLoading = true;
       this.urlSafe = this.domSanitizer.bypassSecurityTrustResourceUrl(cerebrumApp.appurl);
     }else if(cerebrumApp.appId==0){
-      window.open("https://devtron.devlabs-tools.net","_blank")   //or use _self for same tab
+      window.open("http://dashboard.example.com:8080","_blank")   //or use _self for same tab
     }
 
   }

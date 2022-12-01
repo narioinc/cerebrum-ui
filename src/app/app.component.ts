@@ -10,7 +10,7 @@ import { onMainContentChange } from './animations/animations';
 })
 
 export class AppComponent {
-  title = 'cerebrum-ui';
+  title = 'ZION';
   public onSideNavChange: boolean;
 
   constructor(private _sidenavService: SideNavService) {
